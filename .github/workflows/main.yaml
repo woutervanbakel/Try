@@ -1,0 +1,16 @@
+name: Try
+on: [push, pull_request]
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest CMake and Ninja
+        # Using 'latest' branch, the most recent CMake and ninja are installed.
+        uses: lukka/get-cmake@latest
+
+      - name: Run CMake
+        run: |
+          which cmake
+          cmake --version
