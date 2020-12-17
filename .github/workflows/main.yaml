@@ -11,6 +11,7 @@ jobs:
         uses: lukka/get-cmake@latest
 
       - name: Run CMake
-        run: |
-          which cmake
-          cmake --version
+        run: cmake -G ninja
+
+      - name: Run Ninja
+        run: ninja
