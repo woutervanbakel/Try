@@ -107,10 +107,6 @@ public:
         return Try(std::make_shared<Exception>(e));
     }
 
-    static Try Failure(const std::exception &) {
-        return Try(std::make_shared<Exception>(HttpErrorCode::InternalServerError, "Internal Server Error"));
-    }
-
     static Try<T> Success(const T &value) {
         return Try<T>(value);
     }
