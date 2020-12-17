@@ -11,10 +11,10 @@ jobs:
         uses: lukka/get-cmake@latest
 
       - name: Run CMake
-        run: cmake -G Ninja .
+        run: cmake -G Ninja -B bin
 
       - name: Run Ninja
-        run: ninja
+        run: ninja -C bin
 
       - name: Run Try demo
-        run: ./Try
+        run: ./bin/Try
