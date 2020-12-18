@@ -7,11 +7,11 @@ jobs:
 
     steps:
       - name: Get latest CMake and Ninja
-        # Using 'latest' branch, the most recent CMake and ninja are installed.
         uses: lukka/get-cmake@latest
 
       - name: Checkout
         uses: actions/checkout@v2
+        run: git submodules update --init
 
       - name: Run CMake
         run: cmake -G Ninja -B bin
