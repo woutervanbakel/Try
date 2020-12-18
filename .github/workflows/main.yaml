@@ -11,16 +11,18 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        run: git submodules update --init
 
-      - name: Run CMake
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+
+      - name: Generate build environment
         run: cmake -G Ninja -B bin
 
-      - name: Run Ninja
+      - name: Build
         run: ninja -C bin
 
       - name: Unit test
         run: ./bin/test/Try_test
 
-      - name: Run Try demo
+      - name: Run demo
         run: ./bin/Try
