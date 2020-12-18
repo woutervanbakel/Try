@@ -19,5 +19,8 @@ jobs:
       - name: Run Ninja
         run: ninja -C bin
 
+      - name: Unit test
+        run: ./bin/test/Try_test
+
       - name: Run Try demo
         run: ./bin/Try
