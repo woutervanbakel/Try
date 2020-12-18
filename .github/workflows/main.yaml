@@ -22,7 +22,7 @@ jobs:
         run: ninja -C bin
 
       - name: Unit test
-        run: ./bin/test/Try_test
+        run: ./bin/Try_test
 
       - name: Run demo
         run: ./bin/Try

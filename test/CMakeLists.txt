@@ -3,4 +3,5 @@ set(PROJECT_SOURCES
 )
 
 add_executable(${PROJECT_NAME}_test ${PROJECT_SOURCES})
-target_link_libraries(${PROJECT_NAME}_test gtest gtest_main)
+target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME}_coverage gcov gtest gtest_main)
+add_definitions(--coverage)
