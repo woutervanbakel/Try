@@ -2,5 +2,11 @@
 
 # Try
 
-## Install Ninja locally
-https://github.com/ninja-build/ninja/releases
+## Local build environment
+1. [Download](https://cmake.org/download/) and install CMake
+2. [Download](https://github.com/ninja-build/ninja/releases) and install Ninja
+
+## Configure and Build
+- `cmake -G Ninja -B bin`
+
+- `ninja -C bin`
