@@ -5,6 +5,8 @@
 ## Local build environment
 1. [Download](https://cmake.org/download/) and install CMake
 2. [Download](https://github.com/ninja-build/ninja/releases) and install Ninja
+3. Init submodules to fetch googletest<br>
+    `git submodules update --init`
 
 ## Configure and Build
 - `cmake -G Ninja -B bin`
