@@ -10,7 +10,7 @@ jobs:
         uses: lukka/get-cmake@latest
 
       - name: Get gcovr
-        run: apt-get install gcovr
+        run: sudo apt-get install gcovr
 
       - name: Checkout
         uses: actions/checkout@v2
