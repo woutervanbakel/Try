@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "gtest/gtest.h"
 #include "types/Exception.hpp"
 
@@ -14,5 +15,6 @@ TEST_F(ExceptionTest, WhatReturnTheMessage) {
 }
 
 TEST_F(ExceptionTest, ExceptionFromStdException) {
-    EXPECT_NO_THROW(Exception ex(std::exception()));
+    Exception ex(std::invalid_argument("Invalid argument"));
+    EXPECT_STREQ(ex.what(), "Invalid argument");
 }
