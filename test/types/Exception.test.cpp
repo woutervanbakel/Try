@@ -2,11 +2,17 @@
 #include "gtest/gtest.h"
 #include "types/Exception.hpp"
 
-TEST(Excpetion, initialTest) {
-	EXPECT_EQ(0, 0);
+class ExceptionTest : public testing::Test {
+protected:
+    void SetUp() override {
+    }
+};
+
+TEST_F(ExceptionTest, WhatReturnTheMessage) {
+    Exception ex("Exception 42");
+    EXPECT_STREQ(ex.what(), "Exception 42");
 }
 
-TEST(ExceptionTest, ShouldReturnErrAsJson) {
-    Exception ex("Exception desc");
-    EXPECT_STREQ(ex.what(), "Exception desc");
+TEST_F(ExceptionTest, ExceptionFromStdException) {
+    EXPECT_NO_THROW(Exception ex(std::exception()));
 }

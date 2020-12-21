@@ -107,6 +107,10 @@ public:
         return Try(std::make_shared<Exception>(e));
     }
 
+    static Try Failure(const std::exception &e) {
+        return Try(std::make_shared<Exception>(e.what()));
+    }
+
     static Try<T> Success(const T &value) {
         return Try<T>(value);
     }
