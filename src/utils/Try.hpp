@@ -28,6 +28,8 @@ public:
             return Success(res);
         } catch (const Exception &e) {
             return Failure(e);
+        } catch (const std::exception &e) {
+            return Failure(e);
         } catch (...) {
             return Failure(std::exception());
         }
