@@ -22,7 +22,7 @@ jobs:
         run: ninja -C bin
 
       - name: Unit test
-        run: ./bin/Try_test
+        run: ./bin/Try_test && gcovr --root . --exclude googletest
 
       - name: Run demo
         run: ./bin/Try
